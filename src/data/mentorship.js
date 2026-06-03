@@ -205,8 +205,8 @@ export const COUNTRY_CAREER_SUPPORT = {
   BD: [
     { name: "Moner Bondhu", url: "https://www.monerbondhu.com", cost: "Free + paid", type: "Online counselling", note: "Bangladesh-based mental-health and counselling platform with trained counsellors." },
     { name: "Kaan Pete Roi", url: "https://shuni.org", cost: "Free", type: "Emotional support helpline", note: "Confidential helpline: 9612-119-911. Daily 3pm–9pm." },
-    { name: "Bangladesh Career Club", url: "https://bangladeshcareerclub.com", cost: "Free", type: "Career-guidance community", note: "Free career-counselling community for Bangladeshi students and professionals." },
-    { name: "10 Minute School Career", url: "https://10minuteschool.com", cost: "Free + paid", type: "Career and skill content", note: "Bangladesh's largest edtech platform with career-prep content in Bangla and English." },
+    { name: "10 Minute School", url: "https://10minuteschool.com", cost: "Free + paid", type: "Career and skill content", note: "Bangladesh's largest edtech platform with career-prep content in Bangla and English." },
+    { name: "Bdjobs Job Portal", url: "https://jobs.bdjobs.com", cost: "Free + paid", type: "Career-guidance portal", note: "Bangladesh's largest jobs site with career-development articles, interview tips, and search across thousands of openings." },
   ],
   AE: [
     { name: "Estijaba", url: "https://www.doh.gov.ae", cost: "Free", type: "Health & mental-health helpline", note: "Department of Health Abu Dhabi service: 8001717." },
@@ -226,14 +226,14 @@ export const COUNTRY_CAREER_SUPPORT = {
     { name: "Befrienders Worldwide", url: "https://www.befrienders.org", cost: "Free", type: "Global helpline directory", note: "Find local helplines by country." },
   ],
   IR: [
-    { name: "Behzisti Hotline 1480", url: "tel:1480", cost: "Free", type: "Government welfare hotline", note: "National mental-health and social-support hotline." },
-    { name: "Aramesh Online Counselling", url: "https://aramesh-online.com", cost: "Paid", type: "Online counselling", note: "Iran's largest online counselling platform with licensed counsellors." },
-    { name: "Hamrahan-e-Aramesh", url: "https://www.haram-org.com", cost: "Free + paid", type: "Counselling & support", note: "Iran-based counselling support network." },
+    { name: "Behzisti Hotline 1480", url: "tel:1480", cost: "Free", type: "Government welfare hotline", note: "Iran's national mental-health and social-support hotline." },
+    { name: "Befrienders Worldwide", url: "https://www.befrienders.org", cost: "Free", type: "Global helpline directory", note: "Find emotional-support helplines available to Iranian residents." },
+    { name: "Iranian Diaspora Network", url: "https://www.linkedin.com/groups/2057898/", cost: "Free", type: "Professional network", note: "LinkedIn group for Iranian professionals worldwide. Mentorship and career conversations." },
   ],
   IQ: [
-    { name: "Iraqi Society of Psychiatrists", url: "https://isp-iraq.org", cost: "Paid directory", type: "Find a psychiatrist", note: "Directory of practising psychiatrists across Iraq." },
-    { name: "International Medical Corps Iraq", url: "https://internationalmedicalcorps.org", cost: "Free", type: "Mental-health programmes", note: "Free mental-health support programmes especially in conflict-affected regions." },
-    { name: "AUIS Career Development Office", url: "https://auis.edu.krd", cost: "Free for AUIS students", type: "Career counselling", note: "American University of Iraq career office; many resources also publicly accessible." },
+    { name: "International Medical Corps Iraq", url: "https://internationalmedicalcorps.org", cost: "Free", type: "Mental-health programmes", note: "Mental-health and psychosocial support, especially in conflict-affected regions." },
+    { name: "AUIS Career Development Office", url: "https://auis.edu.krd", cost: "Free for AUIS students", type: "Career counselling", note: "American University of Iraq career office; many resources publicly accessible." },
+    { name: "Befrienders Worldwide", url: "https://www.befrienders.org", cost: "Free", type: "Global helpline directory", note: "Find local emotional-support helplines across Iraq and the wider region." },
   ],
   LB: [
     { name: "Embrace Lifeline", url: "https://embracelebanon.org", cost: "Free", type: "24/7 mental-health support", note: "Lebanon's national mental-health helpline: 1564." },
@@ -242,7 +242,7 @@ export const COUNTRY_CAREER_SUPPORT = {
   ],
   CN: [
     { name: "Beijing Suicide Research and Prevention Center", url: "tel:01082951332", cost: "Free", type: "Mental-health hotline", note: "24/7 hotline: 010-8295-1332." },
-    { name: "Lifeline Shanghai", url: "https://www.lifelineshanghai.com", cost: "Free", type: "Confidential support", note: "English / Mandarin helpline: 400 821 1215. 10am–10pm daily." },
+    { name: "Lifeline Shanghai", url: "tel:4008211215", cost: "Free", type: "Confidential support", note: "English / Mandarin helpline: 400 821 1215. 10am–10pm daily." },
     { name: "BetterHelp China", url: "https://www.betterhelp.com", cost: "Paid", type: "Online therapy", note: "Online therapy platform with Mandarin-speaking therapists." },
     { name: "Zhaopin Career Advice", url: "https://www.zhaopin.com", cost: "Free", type: "Career-guidance articles", note: "Career-advice section of China's largest job portal." },
   ],

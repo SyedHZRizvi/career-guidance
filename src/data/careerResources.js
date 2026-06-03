@@ -71,10 +71,10 @@ export const CAREER_RESOURCES = {
       { name: "Google UX Design Certificate", url: "https://www.coursera.org/professional-certificates/google-ux-design", cost: "Paid", note: "Career-changer-friendly certificate that hiring teams recognise." },
       { name: "Refactoring UI", url: "https://www.refactoringui.com", cost: "Paid book", note: "Visual design fundamentals for non-designers and devs." },
       { name: "Figma's Design School (YouTube)", url: "https://www.youtube.com/@Figma", cost: "Free", note: "Free tutorials from the tool you'll actually be using." },
-      { name: "Designer Hangout", url: "https://www.designerhangout.co", cost: "Free", note: "The largest UX designer Slack community." },
+      { name: "Designership", url: "https://designership.com", cost: "Free + Paid", note: "Active design community with weekly events, mentorship, and portfolio reviews." },
     ],
     communities: [
-      { name: "Designer Hangout (Slack)", url: "https://www.designerhangout.co", note: "Vetted UX-designer community with 13,000+ members." },
+      { name: "Mizko's Designership", url: "https://designership.com", note: "Active design community with weekly events, mentorship, and portfolio reviews." },
       { name: "ADPList", url: "https://adplist.org", note: "Free 1-on-1 design mentorship from senior practitioners." },
       { name: "r/userexperience", url: "https://www.reddit.com/r/userexperience/", note: "Honest UX career discussions." },
     ],
@@ -121,13 +121,13 @@ export const CAREER_RESOURCES = {
   "teacher-educator": {
     searchRole: "Teacher Educator Professor",
     learn: [
-      { name: "Coursera: Foundations of Teaching", url: "https://www.coursera.org/learn/foundations-teaching-learning", cost: "Audit free", note: "Approachable intro to learning science and classroom design." },
+      { name: "Coursera: Teach English Now!", url: "https://www.coursera.org/specializations/tesol", cost: "Audit free", note: "Highly-rated teaching specialisation from Arizona State; covers learning science and classroom design." },
       { name: "Edutopia", url: "https://www.edutopia.org", cost: "Free", note: "Practical classroom strategies from working teachers worldwide." },
       { name: "Teach for India / All / America", url: "https://www.teachforall.org", cost: "Programme", note: "Global network of teaching fellowships for graduates entering education." },
     ],
     communities: [
       { name: "r/Teachers", url: "https://www.reddit.com/r/Teachers/", note: "Working teachers exchanging classroom realities and tips." },
-      { name: "Edutopia Community", url: "https://www.edutopia.org/community", note: "Discussion forums attached to a respected education publication." },
+      { name: "Edutopia", url: "https://www.edutopia.org", note: "Highly respected education publication with practical classroom strategies." },
     ],
   },
 

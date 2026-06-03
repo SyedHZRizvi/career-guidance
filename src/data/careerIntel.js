@@ -20,7 +20,7 @@ export const JOB_BOARDS = {
   PK: [
     { name: "Rozee.pk", url: (role) => `https://www.rozee.pk/job/jsearch/q/${encodeURIComponent(role)}` },
     { name: "LinkedIn Jobs", url: (role) => `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(role)}&location=Pakistan` },
-    { name: "Mustakbil", url: (role) => `https://www.mustakbil.com/jobs/search?q=${encodeURIComponent(role)}` },
+    { name: "Mustakbil", url: (role) => `https://www.mustakbil.com/jobs?keyword=${encodeURIComponent(role)}` },
     { name: "Indeed Pakistan", url: (role) => `https://pk.indeed.com/jobs?q=${encodeURIComponent(role)}` },
   ],
   UK: [
@@ -44,8 +44,8 @@ export const JOB_BOARDS = {
   BD: [
     { name: "Bdjobs", url: (role) => `https://jobs.bdjobs.com/jobsearch.asp?txtsearch=${encodeURIComponent(role)}` },
     { name: "LinkedIn Jobs", url: (role) => `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(role)}&location=Bangladesh` },
-    { name: "Indeed Bangladesh", url: (role) => `https://bd.indeed.com/jobs?q=${encodeURIComponent(role)}` },
-    { name: "Chakri.com", url: (role) => `https://chakri.com/search?q=${encodeURIComponent(role)}` },
+    { name: "Indeed (Bangladesh)", url: (role) => `https://www.indeed.com/jobs?q=${encodeURIComponent(role)}&l=Bangladesh` },
+    { name: "Skill.jobs", url: (role) => `https://skill.jobs/?s=${encodeURIComponent(role)}` },
   ],
   AU: [
     { name: "Seek", url: (role) => `https://www.seek.com.au/${encodeURIComponent(role)}-jobs` },
@@ -86,8 +86,8 @@ export const JOB_BOARDS = {
   IQ: [
     { name: "Bayt (Iraq)", url: (role) => `https://www.bayt.com/en/iraq/jobs/${encodeURIComponent(role.toLowerCase().replace(/\s+/g, "-"))}-jobs/` },
     { name: "LinkedIn Jobs", url: (role) => `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(role)}&location=Iraq` },
-    { name: "Jobs Iraq", url: (role) => `https://jobsiniraq.com/en/jobs/search?keywords=${encodeURIComponent(role)}` },
-    { name: "Bright.iq", url: () => `https://bright.iq/jobs` },
+    { name: "Career Iraq", url: (role) => `https://www.careeriraq.com/jobs?keywords=${encodeURIComponent(role)}` },
+    { name: "Iraq Jobs (Career Iraq)", url: (role) => `https://www.careeriraq.com/jobs?keywords=${encodeURIComponent(role)}` },
   ],
   LB: [
     { name: "Bayt (Lebanon)", url: (role) => `https://www.bayt.com/en/lebanon/jobs/${encodeURIComponent(role.toLowerCase().replace(/\s+/g, "-"))}-jobs/` },
@@ -657,11 +657,11 @@ export const CAREER_INTEL = {
         sourceUrl: "https://en.wikipedia.org/wiki/Marques_Brownlee",
       },
       {
-        name: "Komal Pandey",
-        role: "Fashion content creator",
+        name: "Bhuvan Bam",
+        role: "Content creator (BB Ki Vines) and musician",
         country: "India",
-        summary: "Former fashion intern who built a global audience on Instagram and YouTube with creative styling content. Featured in Forbes 30 Under 30.",
-        sourceUrl: "https://en.wikipedia.org/wiki/Komal_Pandey",
+        summary: "Started solo on YouTube in 2015 with comedy sketches voicing every character himself. First Indian creator to cross 10M subscribers, then 20M+. Built a production studio and Netflix specials from scratch.",
+        sourceUrl: "https://en.wikipedia.org/wiki/Bhuvan_Bam",
       },
     ],
   },
@@ -1468,7 +1468,7 @@ export const INCLUSIVE_COMMUNITIES = {
     default: [
       { name: "FirstGen Network (LinkedIn group)", url: "https://www.linkedin.com/groups/first-generation-professionals", note: "Peer support for first-generation professionals." },
       { name: "I'm First!", url: "https://imfirst.org", note: "Community for first-generation college students." },
-      { name: "First Gen College Bound", url: "https://firstgencollegebound.org", note: "Mentorship and scholarships for first-gen students." },
+      { name: "Center for First-generation Student Success", url: "https://firstgen.naspa.org", note: "NASPA-backed centre with research, mentorship, and scholarship resources for first-gen students." },
     ],
   },
 
@@ -1499,12 +1499,12 @@ export const INCLUSIVE_COMMUNITIES = {
     default: [
       { name: "Religious Freedom & Business Foundation", url: "https://religiousfreedomandbusiness.org", note: "Resources for employees and employers who value religious accommodation in the workplace." },
       { name: "Salaam Workplace (LinkedIn Group)", url: "https://www.linkedin.com/groups/salaam-workplace", note: "Network of Muslim professionals sharing faith-friendly workplace experiences." },
-      { name: "Faith at Work Movement", url: "https://www.faithatwork.com", note: "Multi-faith resources for integrating personal faith and professional life." },
+      { name: "Harvard Pluralism Project", url: "https://pluralism.org", note: "Multi-faith research and resources on religious life across diverse workplaces." },
       { name: "Modest Style Network", url: "https://modeststreetfashion.com", note: "Community for professionals who observe modest dress in modern workplaces." },
     ],
     "software-engineer": [
       { name: "Muslims in Tech (Slack)", url: "https://muslimsintech.com", note: "Global community of Muslim software professionals supporting each other in tech careers." },
-      { name: "Christians in Tech", url: "https://christiansintech.com", note: "Global community for Christian technologists building careers with integrity." },
+      { name: "Tech Faith Collective", url: "https://www.linkedin.com/groups/13917095/", note: "LinkedIn community for technologists across faith traditions to discuss faith-integrated work." },
     ],
     "business-finance": [
       { name: "AAOIFI", url: "https://aaoifi.com", note: "Islamic finance standards body. Great entry into Shariah-compliant finance careers." },

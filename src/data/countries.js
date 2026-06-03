@@ -232,7 +232,7 @@ COUNTRIES.BD = {
   resources: [
     { name: "Kaan Pete Roi", detail: "Mental-health helpline: 9612-119-911" },
     { name: "Moner Bondhu", detail: "Online counselling: monerbondhu.com" },
-    { name: "Bangladesh Career Club", detail: "Free career guidance: bangladeshcareerclub.com" },
+    { name: "Bdjobs Job Portal", detail: "Bangladesh's largest job portal: jobs.bdjobs.com" },
   ],
 };
 
@@ -419,7 +419,7 @@ COUNTRIES.IR = {
   },
   resources: [
     { name: "Iranian Mental Health Hotline", detail: "Behzisti welfare hotline: 1480" },
-    { name: "Aramesh Counselling", detail: "Online counselling: aramesh-online.com" },
+    { name: "Befrienders Worldwide", detail: "Global helpline directory: befrienders.org" },
     { name: "Befrienders Worldwide", detail: "Global directory: befrienders.org" },
   ],
 };
@@ -454,7 +454,7 @@ COUNTRIES.IQ = {
       "Iraq is rebuilding, and there's real demand for skilled professionals in IT, energy, healthcare, education, and entrepreneurship. The Kurdistan region in particular has a growing private sector. Remote work and freelancing open international income paths from anywhere in the country.",
   },
   resources: [
-    { name: "Iraqi Society of Psychiatrists", detail: "Find mental-health support: isp-iraq.org" },
+    { name: "International Medical Corps Iraq", detail: "Mental-health programmes: internationalmedicalcorps.org" },
     { name: "International Medical Corps Iraq", detail: "Mental-health programmes" },
     { name: "Befrienders Worldwide", detail: "Global helpline directory: befrienders.org" },
   ],
