@@ -11,7 +11,7 @@ export const CAREER_RESOURCES = {
     searchRole: "Software Engineer",
     learn: [
       { name: "freeCodeCamp", url: "https://www.freecodecamp.org", cost: "Free", note: "Project-based curriculum from absolute beginner to job-ready." },
-      { name: "CS50 (Harvard via edX)", url: "https://cs50.harvard.edu/x/", cost: "Free", note: "The world's most respected intro to computer science." },
+      { name: "CS50 (Harvard via edX)", url: "https://cs50.harvard.edu/x/", cost: "Free", note: "Widely regarded as one of the world's best introductory computer science courses." },
       { name: "The Odin Project", url: "https://www.theodinproject.com", cost: "Free", note: "Free full-stack web development path with strong community." },
       { name: "LeetCode", url: "https://leetcode.com", cost: "Free + Paid", note: "Coding-interview practice. Essential for landing top jobs." },
     ],
@@ -55,7 +55,7 @@ export const CAREER_RESOURCES = {
   psychologist: {
     searchRole: "Psychologist Counsellor Therapist",
     learn: [
-      { name: "Yale's Science of Wellbeing (Coursera)", url: "https://www.coursera.org/learn/the-science-of-well-being", cost: "Audit free", note: "The most popular psychology course in the world." },
+      { name: "Yale's Science of Wellbeing (Coursera)", url: "https://www.coursera.org/learn/the-science-of-well-being", cost: "Audit free", note: "One of the most-enrolled online psychology courses ever offered, widely recommended by practitioners." },
       { name: "Verywell Mind", url: "https://www.verywellmind.com", cost: "Free", note: "Approachable, well-sourced articles on every area of psychology." },
       { name: "American Psychological Association", url: "https://www.apa.org", cost: "Free + Paid", note: "Authoritative resources on careers and education in psychology." },
     ],

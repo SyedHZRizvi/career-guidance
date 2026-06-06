@@ -61,8 +61,9 @@ export default function CoachAndInterview({ answers, ranked }) {
       </h3>
       <p className="mt-2 text-gray-700">
         Have a real, ongoing conversation with an AI coach who remembers your profile.
-        Or rehearse a job interview for your top career and get honest feedback. Both
-        live entirely in your browser.
+        Or rehearse a job interview for your top career and get honest feedback. Your
+        conversation history is saved only in your browser. Messages are sent to the
+        Anthropic API when you interact — nothing is stored on our servers.
       </p>
 
       <div className="mt-5 flex flex-wrap gap-2">

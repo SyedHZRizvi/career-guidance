@@ -789,7 +789,7 @@ function AiRiskCard({ ai }) {
   }[ai.level] || ai.level;
 
   return (
-    <Section icon={<TrendingUp className="h-4 w-4" />} title="AI and automation risk (2024 – 2030)">
+    <Section icon={<TrendingUp className="h-4 w-4" />} title="AI and automation risk (2025 – 2030)">
       <div
         className={`rounded-2xl bg-gradient-to-br ${colorMap[ai.level] || "from-gray-50 to-gray-100 text-gray-800 ring-gray-200"} p-4 ring-1`}
       >

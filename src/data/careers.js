@@ -183,7 +183,7 @@ export const CAREERS = [
       US: "Journalism or Communications major, or the direct creator route. TikTok and YouTube economies here are massive.",
       CA: "Journalism (Ryerson/Carleton) or self-built creator brand.",
     },
-    growthOutlook: "Creator economy growing over 25% a year, though earnings are heavily skewed toward the top 1%.",
+    growthOutlook: "Creator economy growing rapidly year-on-year, though earnings are heavily skewed toward the top percentile.",
   },
   {
     id: "entrepreneur",
@@ -232,7 +232,7 @@ export const CAREERS = [
       PK: "TEVTA, NAVTTC certified courses → apprenticeship → trades, hospitality, automotive.",
       UK: "T-Levels or Apprenticeships → City & Guilds → trades pay well, especially London.",
       US: "Trade schools (2y) → state license → strong income; severe shortage of skilled trades.",
-      CA: "Red Seal trades through provincial colleges. Huge demand; six-figure earnings are common.",
+      CA: "Red Seal trades through provincial colleges. Huge demand; six-figure earnings are achievable for licensed senior tradespeople.",
     },
     growthOutlook: "Massive shortage globally. Pays well and stays largely AI-resistant.",
   },

@@ -105,8 +105,8 @@ export default function Welcome({ next, answers, restart }) {
           <Feature
             icon={<Lock className="h-5 w-5" />}
             color="from-emerald-500 to-teal-500"
-            title="Private"
-            body="Everything stays on your device. No accounts. No tracking. Ever."
+            title="Private by default"
+            body="Your answers stay on your device. No accounts, no data collection, no tracking. Optional AI features transmit only what you share directly to the Anthropic API — nothing is stored on our servers."
           />
         </div>
 
@@ -141,6 +141,15 @@ export default function Welcome({ next, answers, restart }) {
             questions, honest insights, and a place to be heard.
           </p>
         </div>
+
+        {/* Legal disclaimer */}
+        <p className="mt-5 text-center text-xs leading-relaxed text-gray-400 sm:text-left">
+          Pathfinder provides general career information only. It is not a substitute for
+          professional career counselling, medical, legal, or financial advice. Salary figures
+          are directional estimates and vary widely by location, employer, and individual.
+          If you are experiencing a mental-health crisis, please contact a qualified professional
+          or a local helpline.
+        </p>
       </div>
     </div>
   );

@@ -178,9 +178,13 @@ export default function Vent({ answers, update, next, back }) {
 
       {response && (
         <div className="mt-6 rounded-3xl bg-gradient-to-br from-brand-50 via-fuchsia-50 to-pink-50 p-6 ring-1 ring-brand-100 animate-fade-in">
-          <div className="mb-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
-            <Sparkles className="h-4 w-4" /> Pathfinder companion
+          <div className="mb-1 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
+            <Sparkles className="h-4 w-4" /> Pathfinder AI companion
           </div>
+          <p className="mb-3 text-[11px] text-gray-400">
+            This is an AI-generated response, not professional mental health support. If you are
+            in crisis, please contact a qualified counsellor or a local helpline.
+          </p>
           <div className="whitespace-pre-wrap text-[15px] leading-relaxed text-gray-800">
             {response}
           </div>
