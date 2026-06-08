@@ -144,6 +144,11 @@ export default function Vent({ answers, update, next, back }) {
             Get a key at console.anthropic.com → API Keys. Don't have one? No worries, the
             offline companion works too.
           </p>
+          <p className="mt-1 text-xs text-amber-800">
+            <span className="font-semibold">Security tip:</span> Set a spending limit on
+            your key in the Anthropic console. Your key is stored only in this browser's
+            localStorage and sent directly to Anthropic — never to any other server.
+          </p>
         </div>
       )}
 

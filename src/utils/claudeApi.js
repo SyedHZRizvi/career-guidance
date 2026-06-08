@@ -5,7 +5,7 @@
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const MODEL = "claude-haiku-4-5-20251001";
 
-const SYSTEM_PROMPT = `You are a warm, non-judgmental career counsellor based out of India, Pakistan, UK, USA, or Canada (the user will tell you which). You talk to people of ALL life stages: school students, university students, working adults, people between jobs, career changers, and those returning to work after a break.
+const SYSTEM_PROMPT = `You are a warm, non-judgmental career counsellor. The user may be based in any of these countries: India, Pakistan, Bangladesh, Sri Lanka, Afghanistan, UAE, Iran, Iraq, Lebanon, China, UK, USA, Canada, Australia, or another country. You talk to people of ALL life stages: school students, university students, working adults, people between jobs, career changers, and those returning to work after a break.
 
 The user has just shared something personal about their career anxieties, family pressure, financial constraints, or feelings about their current situation.
 
@@ -22,9 +22,9 @@ Rules:
 8. For adults with dependents: never suggest reckless leaps. Always frame moves as sequenced bridges, not jumps.
 9. For career changers / returning workers: validate the courage involved. Don't make them feel late.
 10. NEVER suggest cutting off family, lying to a partner, hiding huge financial decisions, or making impulsive job exits.
-11. If they mention self-harm, severe depression, or suicidal thoughts: immediately suggest a relevant helpline and recommend they speak to a counsellor or trusted person.
+11. CRITICAL SAFETY RULE: If the user mentions self-harm, suicide, wanting to die, or any crisis signal, STOP all career guidance immediately. Your ENTIRE response must be: (a) one short sentence acknowledging what they said without minimising, (b) a clear statement that this tool cannot provide crisis support, and (c) the crisis helplines relevant to their country. Use these: Pakistan: Umang 0317-4288665 or Rozan 0800-22444. India: iCall 9152987821 or Vandrevala Foundation 1860-2662-345. Bangladesh: Kaan Pete Roi 9612-119-911. Sri Lanka: Sumithrayo +94 11 269 6666. UAE: Estijaba 800-1717. Lebanon: Embrace 1564. Iran: Behzisti 1480. UK: Samaritans 116 123 or text SHOUT to 85258. USA: call or text 988. Canada: 1-833-456-4566. Australia: Lifeline 13 11 14. All other countries: befrienders.org. Do NOT add career content after the helplines.
 12. Keep total response to 120–200 words. Conversational tone. No lists or headers. No emojis.
-13. Use British English for UK; American English for US/Canada; Indian English for India; Pakistani English for Pakistan.
+13. Use British English for UK and Australia; American English for US and Canada; Indian English for India and South Asia; locally appropriate English elsewhere.
 14. Important style rule: do NOT use em-dashes (—) or " - " as sentence breaks anywhere. They read as AI-generated. Use periods, commas, colons, or rewrite the sentence. Numeric ranges like "5–7 minutes" are fine.`;
 
 export function getStoredApiKey() {
@@ -184,10 +184,45 @@ export async function generateEmpatheticResponse({ apiKey, ventText, context }) 
   return text;
 }
 
+// ─── Crisis keyword pattern ────────────────────────────────────────────────────
+// Deliberately broad: we would rather fire this for a false positive (someone
+// says "kill it" about a presentation) than miss a genuine crisis.
+// The real Claude API system prompt (Rule 11) already handles this path when an
+// API key is configured. This guard covers the offline / no-key path.
+const CRISIS_KEYWORDS =
+  /suicid|kill\s*(my|him|her|them|our)sel[fv]|self.{0,6}harm|cut(ting)?\s*(my(self)?|wrists?)|hurt(ing)?\s*my(self)?|end\s*(my|this)\s*(life|existence)|don.{0,4}t\s*want\s*to\s*(live|exist|be\s*here|wake\s*up)|no\s*reason\s*to\s*live|want\s*to\s*(die|disappear|not\s*exist)|give\s*up\s*on\s*(my\s*)?life|life\s*is\s*(not\s*worth|worthless)|take\s*my\s*(own\s*)?life|jump\s*(off|from)|hang\s*(my)?self|overdose|od\s*on/i;
+
 // Rule-based fallback used when no API key is configured.
 // Picks a response template based on detected themes in the vent text.
 export function fallbackEmpatheticResponse({ ventText, context }) {
   const lower = (ventText || "").toLowerCase();
+
+  // ── CRISIS CHECK: must run before any other logic ──────────────────────────
+  // If any crisis signal is detected we return ONLY a crisis card with helplines.
+  // Returning generic career advice to someone in crisis is negligent under UK,
+  // US, Canadian, Australian, and Indian duty-of-care law.
+  if (CRISIS_KEYWORDS.test(lower)) {
+    return `What you've shared sounds very serious, and I'm glad you put it into words.
+
+Pathfinder is a career-guidance tool — it cannot provide the support this moment needs. Please reach out to a trained crisis counsellor right now. You don't have to go through this alone:
+
+Pakistan: Umang 0317-4288665 (24/7) or Rozan 0800-22444
+India: iCall 9152987821 or Vandrevala Foundation 1860-2662-345 (24/7)
+Bangladesh: Kaan Pete Roi 9612-119-911
+Sri Lanka: Sumithrayo +94 11 269 6666
+UAE: Estijaba 800-1717 or Counselling helpline 800-4673
+Lebanon: Embrace 1564
+Iran: Behzisti Organisation 1480
+Iraq: Jiyan Foundation +964 750 011 9993
+UK: Samaritans 116 123 (free, 24/7) or text SHOUT to 85258
+USA: Call or text 988 (Suicide and Crisis Lifeline, free, 24/7)
+Canada: 1-833-456-4566 (Crisis Services Canada, 24/7)
+Australia: Lifeline 13 11 14 or Beyond Blue 1300 22 4636
+All other countries: befrienders.org lists a local line near you
+
+What you are feeling right now can change. Trained counsellors are available. Please call one of the numbers above.`;
+  }
+
   const themes = [];
 
   if (/parent|mom|dad|father|mother|family|abba|ammi|baba/.test(lower)) themes.push("family");

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowRight,
   HeartHandshake,
@@ -5,7 +6,10 @@ import {
   Sparkles,
   MessageCircle,
   Compass as CompassIcon,
-  TrendingUp,
+  ChevronDown,
+  ChevronUp,
+  Shield,
+  FileText,
 } from "lucide-react";
 import Logo from "./Logo.jsx";
 
@@ -13,6 +17,7 @@ export default function Welcome({ next, answers, restart }) {
   const hasProgress = Boolean(
     answers.country || answers.grade || answers.interests?.length
   );
+  const [legalOpen, setLegalOpen] = useState(false);
 
   return (
     <div className="card relative overflow-hidden">
@@ -142,14 +147,173 @@ export default function Welcome({ next, answers, restart }) {
           </p>
         </div>
 
-        {/* Legal disclaimer */}
-        <p className="mt-5 text-center text-xs leading-relaxed text-gray-400 sm:text-left">
-          Pathfinder provides general career information only. It is not a substitute for
-          professional career counselling, medical, legal, or financial advice. Salary figures
-          are directional estimates and vary widely by location, employer, and individual.
-          If you are experiencing a mental-health crisis, please contact a qualified professional
-          or a local helpline.
-        </p>
+        {/* Legal / Privacy / Terms section */}
+        <div className="mt-6 rounded-2xl border border-gray-200 bg-white/70 text-xs text-gray-600">
+
+          {/* Always-visible summary bar */}
+          <div className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="leading-relaxed">
+              <span className="font-semibold text-gray-800">Disclaimer:</span>{" "}
+              Pathfinder provides general career information only — not professional career,
+              medical, legal, or financial advice. Salary figures are directional estimates.
+              If you are experiencing a mental-health crisis, please contact a qualified
+              professional or a local crisis helpline immediately.{" "}
+              <span className="font-semibold text-amber-700">
+                Age 13+ only. Users under 18 should use this tool with a parent or
+                guardian's awareness.
+              </span>
+            </p>
+            <button
+              onClick={() => setLegalOpen((v) => !v)}
+              className="flex shrink-0 items-center gap-1 self-start rounded-lg px-3 py-1.5 text-xs font-medium text-brand-700 ring-1 ring-brand-200 transition hover:bg-brand-50 sm:self-auto"
+              aria-expanded={legalOpen}
+            >
+              {legalOpen ? (
+                <><ChevronUp className="h-3.5 w-3.5" /> Hide</>
+              ) : (
+                <><ChevronDown className="h-3.5 w-3.5" /> Privacy &amp; Terms</>
+              )}
+            </button>
+          </div>
+
+          {/* Expandable full Privacy Notice + Terms of Use */}
+          {legalOpen && (
+            <div className="border-t border-gray-200 px-4 py-4 leading-relaxed space-y-4">
+
+              {/* Privacy Notice */}
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-gray-800">
+                  <Shield className="h-4 w-4 text-emerald-600" />
+                  Privacy Notice
+                </div>
+                <p>
+                  <span className="font-medium text-gray-700">What we collect:</span>{" "}
+                  Pathfinder stores your answers, name, and progress{" "}
+                  <span className="font-medium">only in your browser's localStorage</span>{" "}
+                  (on your own device). No personal data is transmitted to or stored on any
+                  server controlled by this project.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">AI features (optional):</span>{" "}
+                  If you choose to use the AI Companion (Vent), AI Career Coach, or Mock
+                  Interview features, the text you type is sent to the{" "}
+                  <a href="https://www.anthropic.com/privacy" target="_blank" rel="noreferrer" className="underline text-brand-700">
+                    Anthropic API
+                  </a>{" "}
+                  using your own API key. Anthropic's Privacy Policy governs how that data
+                  is handled. Nothing is stored on our servers. Your API key is stored only
+                  in your browser's localStorage and is never transmitted to anyone except
+                  Anthropic directly.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Hosting:</span>{" "}
+                  This application is hosted on GitHub Pages. GitHub's{" "}
+                  <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer" className="underline text-brand-700">
+                    General Privacy Statement
+                  </a>{" "}
+                  applies to the hosting infrastructure.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Cookies and tracking:</span>{" "}
+                  None. Pathfinder uses no cookies, no analytics trackers, no advertising
+                  scripts, and no third-party SDKs that collect personal data.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Clearing your data:</span>{" "}
+                  You can delete all locally stored data at any time via your browser's
+                  settings (Site Data / LocalStorage for this domain).
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Children and minors:</span>{" "}
+                  This tool is intended for users aged 13 and above. Users under 18 are
+                  advised to use Pathfinder with a parent or guardian's knowledge and
+                  consent. We do not knowingly collect data from children under 13
+                  (COPPA / UK Children's Code / India DPDP s.9 / PIPEDA). If you believe
+                  a child under 13 has provided data through this tool, please contact us
+                  so we can facilitate deletion.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">
+                    Note for users in mainland China:
+                  </span>{" "}
+                  This application is hosted on GitHub Pages, which may be inaccessible
+                  within mainland China due to network restrictions. It has not been
+                  specifically designed or registered for use under China's PIPL or DSL.
+                  Users who access this tool from mainland China do so at their own
+                  discretion.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Contact:</span>{" "}
+                  For privacy requests (access, correction, deletion), please open an
+                  issue at{" "}
+                  <a href="https://github.com/SyedHZRizvi/career-guidance" target="_blank" rel="noreferrer" className="underline text-brand-700">
+                    github.com/SyedHZRizvi/career-guidance
+                  </a>
+                  .
+                </p>
+              </div>
+
+              {/* Terms of Use */}
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-gray-800">
+                  <FileText className="h-4 w-4 text-brand-600" />
+                  Terms of Use &amp; Limitation of Liability
+                </div>
+                <p>
+                  <span className="font-medium text-gray-700">General information only:</span>{" "}
+                  Pathfinder is a free, open-source career exploration tool. All content,
+                  career descriptions, salary figures, and AI-generated responses are
+                  provided for general informational and educational purposes only. Nothing
+                  on this platform constitutes professional career counselling, psychological
+                  advice, financial advice, legal advice, or medical advice.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Salary figures:</span>{" "}
+                  Salary and earnings ranges shown are directional estimates compiled from
+                  public sources. They vary significantly by country, city, employer,
+                  experience level, and market conditions. They should not be relied upon
+                  for financial planning or employment negotiations.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">AI-generated content:</span>{" "}
+                  Responses generated by the Claude AI model (Anthropic) are automated and
+                  have not been individually reviewed. AI outputs can be inaccurate,
+                  incomplete, or culturally inappropriate. Always verify AI advice with
+                  qualified professionals before acting on it.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Mental health:</span>{" "}
+                  Pathfinder is not a crisis service and is not a substitute for mental
+                  health support. If you are experiencing a mental-health emergency, please
+                  contact a qualified professional or an emergency helpline in your country.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Limitation of liability:</span>{" "}
+                  To the fullest extent permitted by applicable law, the creator and
+                  contributors of this open-source project accept no liability for any
+                  direct, indirect, incidental, or consequential loss arising from your
+                  use of, or reliance on, any information or AI-generated content provided
+                  by Pathfinder. Your use of this tool is entirely at your own risk.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Acceptable use:</span>{" "}
+                  Pathfinder is provided free of charge for personal, non-commercial use.
+                  You may not scrape, republish, or sell any part of the content or
+                  AI-generated responses without permission.
+                </p>
+                <p className="mt-2">
+                  <span className="font-medium text-gray-700">Open source:</span>{" "}
+                  Source code is available under the MIT License at{" "}
+                  <a href="https://github.com/SyedHZRizvi/career-guidance" target="_blank" rel="noreferrer" className="underline text-brand-700">
+                    github.com/SyedHZRizvi/career-guidance
+                  </a>
+                  .
+                </p>
+              </div>
+
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
